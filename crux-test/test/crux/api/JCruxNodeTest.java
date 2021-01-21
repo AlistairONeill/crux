@@ -159,6 +159,8 @@ public class JCruxNodeTest {
         node.awaitTx(tx, duration);
     }
 
+    /*
+    //TODO: Reimplement
     @Test
     public void listenTest() {
         final Object[] events = new Object[]{null};
@@ -194,6 +196,7 @@ public class JCruxNodeTest {
 
         assertNull(events[0]);
     }
+     */
 
     @Test
     public void latestCompletedTxTest() {

@@ -169,11 +169,11 @@ public interface ICruxAPI extends ICruxIngestAPI, Closeable {
      * See/use {@link #TX_INDEXED_EVENT_OPTS TX_INDEXED_EVENT_OPTS}
      *
      * This is an experimental API, subject to change.
-     *
+     * //TODO: UPDATE!
      * @param eventOpts should contain `:crux/event-type`, along with any other options the event-type requires.
      * @return an AutoCloseable - closing the return value detaches the listener.
      */
-    AutoCloseable listen(Map<Keyword, ?> eventOpts, Consumer<Map<Keyword, ?>> listener);
+    CruxListener listen(CruxListener listener);
 
     /**
      * @return the latest transaction to have been indexed by this node.

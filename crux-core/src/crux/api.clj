@@ -425,7 +425,7 @@
   (sync [_ timeout] (sync node timeout))
   (awaitTxTime [_ tx-time timeout] (await-tx-time node tx-time timeout))
   (awaitTx [_ submitted-tx timeout] (TransactionInstant/factory ^Map (await-tx node (.toMap submitted-tx) timeout)))
-  (listen [_ event-opts consumer] (listen node event-opts #(.accept consumer %)))
+  (listen [_ listener] (.setCloseable listener (listen node (.getOpts listener) #(.performAction listener %))))
   (latestCompletedTx [_] (TransactionInstant/factory ^Map (latest-completed-tx node)))
   (latestSubmittedTx [_] (TransactionInstant/factory ^Map (latest-submitted-tx node)))
   (activeQueries [_] (active-queries node))
