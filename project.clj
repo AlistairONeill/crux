@@ -11,7 +11,8 @@
    "crux-test"
    "crux-s3"
    "crux-azure-blobs"
-   "crux-bench"])
+   "crux-bench"
+   "crux-kotlin"])
 
 (defproject juxt/crux-dev "crux-dev-SNAPSHOT"
   :url "https://github.com/juxt/crux"
@@ -40,6 +41,7 @@
    [juxt/crux-lucene "crux-git-version-alpha"]
    [juxt/crux-test "crux-git-version"]
    [juxt/crux-bench "crux-git-version"]
+   [juxt/crux-kotlin "crux-git-version"]
 
    [org.apache.kafka/connect-api "2.6.0" :scope "provided"]
 
@@ -110,7 +112,8 @@
                "crux-sql/test"
                "crux-lucene/test"
                "crux-bench/test"
-               "crux-test/test"]
+               "crux-test/test"
+               "crux-kotlin/test"]
 
   :jvm-opts ["-Dlogback.configurationFile=resources/logback-test.xml"
              "-Dclojure.spec.compile-asserts=true"
